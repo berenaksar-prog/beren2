@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardırobunuzun Gizli Maliyeti | Dünya Temizlik Günü 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-50%) translateY(-50%); }
+            100% { transform: translateX(-50%) translateY(-60%); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .stats-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .stat-description {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .impact-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-card {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solutions-section {
+            padding: 5rem 2rem;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .interactive-section {
+            padding: 5rem 2rem;
+            background: #fff;
+        }
+
+        .calculator {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .calculator input, .calculator select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .calculator input:focus, .calculator select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .result {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+            display: none;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Gardırobunuzun Gizli Maliyeti</h1>
+            <p>Her yıl 92 milyon ton tekstil atığı üretiyoruz. Moda endüstrisi küresel karbon emisyonlarının %10'undan sorumlu. Peki ya sizin katkınız?</p>
+            <a href="#stats" class="cta-button">Gerçekleri Keşfet</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Şaşırtıcı Gerçekler</h2>
+            <p class="section-subtitle">Fast fashion'ın dünyamıza verdiği gerçek zarar</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">700</div>
+                    <div class="stat-description">galon su<br>1 pamuklu tişört için</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">1.2B</div>
+                    <div class="stat-description">ton CO₂ emisyonu<br>moda endüstrisinden yıllık</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">0.3%</div>
+                    <div class="stat-description">geri dönüştürülen<br>tekstil oranı</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">500K</div>
+                    <div class="stat-description">ton mikroplastik<br>okyanuslara karışıyor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #2c3e50;">Çevresel Etki</h2>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">🌊</div>
+                    <h3>Su Kirliliği</h3>
+                    <p>Tekstil endüstrisi dünyanın 2. en büyük su kirletici sektörü. Boyama ve işleme süreçleri su kaynaklarını ciddi şekilde kirletiyor.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">🏭</div>
+                    <h3>Karbon Emisyonu</h3>
+                    <p>Moda endüstrisi tüm uluslararası uçuşlar ve deniz taşımacılığından daha fazla sera gazı üretiyor.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">🗑️</div>
+                    <h3>Atık Sorunu</h3>
+                    <p>Gelişmiş ülkelerde kişi başı yılda 95.7 kg tekstil atığı üretiliyor. Bu atıkların çoğu çöplüklerde çürüyor.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">🐠</div>
+                    <h3>Mikroplastik</h3>
+                    <p>Sentetik kıyafetlerin yıkanması okyanusların dibinde yılda yarım milyon ton mikroplastik birikimine neden oluyor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator -->
+    <section class="interactive-section">
+        <div class="container">
+            <h2 class="section-title">Karbon Ayak İzi Hesaplayıcı</h2>
+            <p class="section-subtitle">Yıllık kıyafet alışverişinizin çevresel etkisini hesaplayın</p>
+            
+            <div class="calculator">
+                <h3>Yıllık Kıyafet Alışverişiniz</h3>
+                <input type="number" id="tshirts" placeholder="T-shirt/Bluz adedi" min="0">
+                <input type="number" id="jeans" placeholder="Pantolon/Jean adedi" min="0">
+                <input type="number" id="shoes" placeholder="Ayakkabı çifti" min="0">
+                <input type="number" id="jackets" placeholder="Mont/Ceket adedi" min="0">
+                
+                <select id="shopping-habit">
+                    <option value="low">Az alışveriş yaparım (2-3 ayda bir)</option>
+                    <option value="medium">Orta düzeyde (ayda 1-2 parça)</option>
+                    <option value="high">Çok alışveriş yaparım (haftada 1+ parça)</option>
+                </select>
+                
+                <button class="cta-button" onclick="calculateImpact()" style="width: 100%; margin-top: 20px;">
+                    Etkimi Hesapla
+                </button>
+                
+                <div id="result" class="result">
+                    <h3>Yıllık Çevresel Etkınız</h3>
+                    <div id="impact-details"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Sen de Fark Yaratabilirsin</h2>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>💚 Bilinçli Satın Al</h3>
+                    <p>Kaliteli, uzun ömürlü kıyafetleri tercih et. "Bu parçayı 30 kez giyecek miyim?" sorusunu sor.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3>♻️ Geri Dönüştür</h3>
+                    <p>Eski kıyafetlerini bağışla, takas et veya upcycle projelerinde kullan. Atma, dönüştür!</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3>🧼 Doğru Yıka</h3>
+                    <p>Soğuk suda yıka, hava kurutma tercih et. Bu %40 daha az enerji demek.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3>🛒 2. El Tercih Et</h3>
+                    <p>Vintage ve 2. el kıyafetler hem çevre dostu hem de daha ekonomik.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3>📏 Kıyafet Ömrünü Uzat</h3>
+                    <p>Kıyafetlerin ömrünü 3 ay uzatmak çevresel etkisini %5-10 azaltır.</p>
+                </div>
+                
+                <div class="solution-card">
+                    <h3>🌱 Sürdürülebilir Markalar</h3>
+                    <p>Organik pamuk, geri dönüştürülmüş malzeme kullanan markaları destekle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Dünya Temizlik Günü 2025</h3>
+            <p>Her küçük adım önemli. Bugün gardırobundan başla, yarın için değişim yarat.</p>
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                Bu site, sürdürülebilir moda konusunda farkındalık yaratmak amacıyla hazırlanmıştır.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateImpact() {
+            const tshirts = parseInt(document.getElementById('tshirts').value) || 0;
+            const jeans = parseInt(document.getElementById('jeans').value) || 0;
+            const shoes = parseInt(document.getElementById('shoes').value) || 0;
+            const jackets = parseInt(document.getElementById('jackets').value) || 0;
+            const habit = document.getElementById('shopping-habit').value;
+            
+            // CO2 emissions per item (kg)
+            const emissions = {
+                tshirt: 8.5,
+                jeans: 33.4,
+                shoes: 14.0,
+                jacket: 26.0
+            };
+            
+            // Water usage per item (liters)
+            const water = {
+                tshirt: 2700,
+                jeans: 7500,
+                shoes: 8000,
+                jacket: 5400
+            };
+            
+            let totalCO2 = (tshirts * emissions.tshirt) + 
+                          (jeans * emissions.jeans) + 
+                          (shoes * emissions.shoes) + 
+                          (jackets * emissions.jacket);
+            
+            let totalWater = (tshirts * water.tshirt) + 
+                           (jeans * water.jeans) + 
+                           (shoes * water.shoes) + 
+                           (jackets * water.jacket);
+            
+            // Multiply by shopping habit factor
+            const habitMultiplier = {
+                low: 1,
+                medium: 1.5,
+                high: 2.5
+            };
+            
+            totalCO2 *= habitMultiplier[habit];
+            totalWater *= habitMultiplier[habit];
+            
+            // Calculate equivalents
+            const carKm = Math.round(totalCO2 * 4.6); // km of average car driving
+            const trees = Math.round(totalCO2 / 22); // trees needed to offset
+            const showers = Math.round(totalWater / 65); // 8-minute showers
+            
+            document.getElementById('impact-details').innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h4 style="font-size: 2rem; margin-bottom: 10px;">${totalCO2.toFixed(1)} kg</h4>
+                        <p>CO₂ Emisyonu<br><small>${carKm} km otomobil yolculuğu</small></p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 2rem; margin-bottom: 10px;">${(totalWater/1000).toFixed(1)} bin</h4>
+                        <p>Litre Su<br><small>${showers} adet 8 dk. duş</small></p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                    <p><strong>${trees} ağaç</strong> bu emisyonu karşılamak için 1 yıl büyümeli!</p>
+                </div>
+            `;
+            
+            document.getElementById('result').style.display = 'block';
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<section id=
+<section id="about" style="background:#eaf7f1; padding:2rem; border-radius:10px; margin:2rem;">
+  <h2 style="text-align:center; color:#2c6e49;">Hakkımızda 🌱</h2>
+  <p style="max-width:700px; margin:1rem auto; text-align:center; font-size:1.1rem; line-height:1.6;">
+    Biz, dünya temizliği ve sürdürülebilir modayı destekleyen bir topluluğuz. 
+    Amacımız, her bireyin kıyafet seçimlerinin gezegenimiz üzerindeki etkisini anlamasını sağlamak ve 
+    kıyafet kirliliğini azaltmak için eğlenceli ve interaktif yollar sunmaktır. 🌍
+  </p>
+  <p style="text-align:center; margin-top:1rem;">
+    <strong>Vizyonumuz:</strong> Daha temiz bir dünya ve bilinçli moda tüketimi.<br>
+    <strong>Misyonumuz:</strong> Eğitici oyunlar ve bilgilerle herkesin sürdürülebilir seçimler yapmasını sağlamak.
+  </p>
+</section>
+<section id="mission" style="background:#f0f9f4; padding:2rem; border-radius:10px; margin:2rem 0;">
+  <h2 style="text-align:center; color:#2c6e49;">Görevimiz 🎯</h2>
+  <p style="max-width:700px; margin:1rem auto; text-align:center; font-size:1.1rem; line-height:1.6;">
+    Moda kirliliğini azaltmak ve sürdürülebilir bir yaşam tarzını teşvik etmek için eğlenceli ve öğretici yollar sunuyoruz.
+    İnsanları bilinçli seçimler yapmaya teşvik etmek, gezegenimizi korumanın en önemli adımlarından biridir.
+  </p>
+
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:2rem;">
+    <div style="flex:1 1 250px; text-align:center;">
+      <img src="resim1.jpg" alt="Görev 1" style="width:100%; border-radius:10px;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">Eğitmek</h3>
+      <p>İnsanları sürdürülebilir moda ve temiz yaşam konularında bilinçlendirmek.</p>
+    </div>
+    <div style="flex:1 1 250px; text-align:center;">
+      <img src="resim2.jpg" alt="Görev 2" style="width:100%; border-radius:10px;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">İlham Vermek</h3>
+      <p>Her bireyin küçük adımlarla büyük fark yaratabileceğini göstermek.</p>
+    </div>
+    <div style="flex:1 1 250px; text-align:center;">
+      <img src="resim3.jpg" alt="Görev 3" style="width:100%; border-radius:10px;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">Eyleme Geçirmek</h3>
+      <p>Pratik çözümlerle kullanıcıları sürdürülebilir alışkanlıklar kazandırmak.</p>
+    </div>
+  </div>
+</section>
+<section id="alternatingContent" style="padding:2rem; margin:2rem 0; background:#f7fdf9; border-radius:10px;">
+
+  <!-- 1. İçerik Bloğu: Resim Sol, Metin Sağ -->
+  <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:3rem;">
+    <div style="flex:1 1 300px;">
+      <img src="resim1.jpg" alt="Örnek 1" style="width:100%; border-radius:10px;">
+    </div>
+    <div style="flex:1 1 300px;">
+      <h3 style="color:#2c6e49;">Sürdürülebilir Moda</h3>
+      <p style="line-height:1.6; font-size:1.1rem;">
+        Moda kirliliğini azaltmak için bilinçli seçimler yapıyoruz. Kullanıcılarımıza, kıyafetlerini nasıl değerlendireceklerini ve geri dönüştürebileceklerini gösteriyoruz.
+      </p>
+    </div>
+  </div>
+
+  <!-- 2. İçerik Bloğu: Metin Sol, Resim Sağ -->
+  <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+    <div style="flex:1 1 300px;">
+      <h3 style="color:#2c6e49;">Eğitici Oyunlar</h3>
+      <p style="line-height:1.6; font-size:1.1rem;">
+        Kullanıcılar oyun oynarken sürdürülebilir yaşam ve moda kirliliği hakkında bilgi edinir. Eğlenceli ve interaktif deneyimler sunuyoruz.
+      </p>
+    </div>
+    <div style="flex:1 1 300px;">
+      <img src="resim2.jpg" alt="Örnek 2" style="width:100%; border-radius:10px;">
+    </div>
+  </div>
+
+</section>
+<section id="team" style="padding:2rem; margin:2rem 0; background:#f0f9f4; border-radius:10px; text-align:center;">
+
+  <h2 style="color:#2c6e49;">Ekibimiz 🌿</h2>
+  <p style="max-width:700px; margin:1rem auto; font-size:1.1rem; line-height:1.6;">
+    Dünya temizliği ve sürdürülebilir moda için bir araya gelmiş tutkulu ekibimiz. Her biri gezegenimizi korumak için çalışıyor.
+  </p>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:20px; margin-top:2rem;">
+
+    <div style="text-align:center;">
+      <img src="uye1.jpg" alt="Üye 1" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">Ayşe</h3>
+      <p>Kurucu & Strateji</p>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="uye2.jpg" alt="Üye 2" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">Mehmet</h3>
+      <p>Yazılım Geliştirici</p>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="uye3.jpg" alt="Üye 3" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">Elif</h3>
+      <p>İletişim & Sosyal Medya</p>
+    </div>
+
+    <div style="text-align:center;">
+      <img src="uye4.jpg" alt="Üye 4" style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+      <h3 style="color:#2c6e49; margin-top:0.5rem;">Can</h3>
+      <p>Grafik Tasarım</p>
+    </div>
+
+  </div>
+
+</section>
+<section id="infoCards" style="padding:2rem; margin:2rem 0; background:#fff8e1; border-radius:10px; text-align:center;">
+
+  <h2 style="color:#2c6e49;">Bilmeniz Gerekenler 💡</h2>
+  <p style="max-width:700px; margin:1rem auto; font-size:1.1rem; line-height:1.6;">
+    Moda ve çevre hakkında bazı hızlı bilgiler. Küçük adımlar büyük fark yaratır!
+  </p>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:2rem;">
+
+    <div style="background:#ffeb3b; padding:1.5rem; border-radius:12px; width:250px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+      <h3 style="color:#2c6e49;">92 Milyon Ton</h3>
+      <p>Her yıl dünya genelinde atılan giysi miktarı.</p>
+    </div>
+
+    <div style="background:#ffeb3b; padding:1.5rem; border-radius:12px; width:250px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+      <h3 style="color:#2c6e49;">1 T-shirt = 2700 Litre Su</h3>
+      <p>Bir T-shirt üretmek için ortalama kullanılan su miktarı.</p>
+    </div>
+
+    <div style="background:#ffeb3b; padding:1.5rem; border-radius:12px; width:250px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+      <h3 style="color:#2c6e49;">Geri Dönüşüm Önemli</h3>
+      <p>Kullanılmış giysileri bağışlamak ve dönüştürmek çevreyi korur.</p>
+    </div>
+
+  </div>
+
+</section>
+<section id="faq" style="padding:2rem; margin:2rem 0; background:#f0f9f4; border-radius:10px;">
+  <h2 style="text-align:center; color:#2c6e49;">Sıkça Sorulan Sorular ❓</h2>
+  <div style="max-width:800px; margin:2rem auto;">
+
+    <div class="faq-item" style="margin-bottom:1rem; border-bottom:1px solid #ccc; cursor:pointer;">
+      <h3 style="padding:1rem; margin:0; color:#2c6e49;">Giysilerimi bağışlamak gerçekten fark yaratır mı?</h3>
+      <p class="faq-answer" style="padding:0 1rem 1rem 1rem; display:none; line-height:1.6;">
+        Evet! Kullanılmış giysileri bağışlamak, çöpe giden tekstil miktarını azaltır ve kaynak tasarrufu sağlar.
+      </p>
+    </div>
+
+    <div class="faq-item" style="margin-bottom:1rem; border-bottom:1px solid #ccc; cursor:pointer;">
+      <h3 style="padding:1rem; margin:0; color:#2c6e49;">Geri dönüşüm süreci nasıl işler?</h3>
+      <p class="faq-answer" style="padding:0 1rem 1rem 1rem; display:none; line-height:1.6;">
+        Giysiler toplanır, temizlenir, ayrılır ve tekrar hammadde veya yeni ürün olarak dönüştürülür.
+      </p>
+    </div>
+
+    <div class="faq-item" style="margin-bottom:1rem; border-bottom:1px solid #ccc; cursor:pointer;">
+      <h3 style="padding:1rem; margin:0; color:#2c6e49;">Moda kirliliğini azaltmak için günlük neler yapabilirim?</h3>
+      <p class="faq-answer" style="padding:0 1rem 1rem 1rem; display:none; line-height:1.6;">
+        Daha az giysi almak, ikinci el alışveriş yapmak, bağışta bulunmak ve geri dönüştürmek etkili adımlardır.
+      </p>
+    </div>
+
+  </d
+<section id="contact" style="padding:2rem; margin:2rem 0; background:#f7fdf9; border-radius:10px;">
+  <h2 style="text-align:center; color:#2c6e49;">Bizimle İletişime Geçin 📍</h2>
+  <p style="text-align:center; max-width:700px; margin:1rem auto; font-size:1.1rem; line-height:1.6;">
+    Herhangi bir sorunuz veya öneriniz varsa bize ulaşabilirsiniz. Sizinle iletişimde olmaktan mutluluk duyarız!
+  </p>
+
+  <!-- Harita -->
+  <div style="width:100%; height:400px; margin-top:2rem; border-radius:10px; overflow:hidden;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.479503601967!2d-73.98513068459306!3d40.75889617932644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855e7a2f7d1%3A0x3d8b2df2a9d0eabf!2sTimes%20Square%2C%20New%20York%2C%20NY%2010016!5e0!3m2!1str!2str!4v1695200000000!5m2!1str!2str" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- Alt Bilgi (Footer) -->
+<footer style="background:#2c6e49; color:white; text-align:center; padding:2rem; margin-top:2rem; border-radius:10px;">
+  <p>&copy; 2025 Dolabın Çöp Ayak İzi. Tüm Hakları Saklıdır.</p>
+  <p>Email: info@temizlikdunyasi.com | Telefon: +90 555 123 45 67</p>
+  <p>
+    <a href="#" style="color:white; margin:0 10px; text-decoration:none;">Facebook</a> | 
+    <a href="#" style="color:white; margin:0 10px; text-decoration:none;">Instagram</a> | 
+    <a href="#" style="color:white; margin:0 10px; text-decoration:none;">Twitter</a>
+  </p>
+</footer>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akıllı Geri Dönüşüm Danışmanı</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f9f4; color:#333; }
+    header { background:#2c6e49; color:white; padding:2rem; text-align:center; }
+    section { padding:2rem; }
+    h2 { color:#2c6e49; text-align:center; }
+    .btn { background:#2c6e49; color:white; padding:0.7rem 1.2rem; border:none; border-radius:6px; cursor:pointer; margin-top:1rem; }
+    .cards { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:2rem; }
+    .card { background:#ffeb3b; padding:1.5rem; border-radius:12px; width:250px; box-shadow:0 4px 6px rgba(0,0,0,0.1); text-align:center; }
+    footer { background:#2c6e49; color:white; text-align:center; padding:2rem; margin-top:2rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Akıllı Geri Dönüşüm Danışmanı ♻️</h1>
+  <p>Evde veya işyerinde atıkları akıllıca yönetin, sürdürülebilir bir gelecek için adım atın.</p>
+</header>
+
+<section id="problem">
+  <h2>Sorun</h2>
+  <p>Dünya genelinde milyonlarca ton geri dönüştürülebilecek atık, yanlış şekilde çöpe gidiyor. İnsanlar hangi atığı nasıl değerlendireceklerini bilmiyor.</p>
+</section>
+
+<section id="solution">
+  <h2>Çözüm</h2>
+  <p>Akıllı Geri Dönüşüm Danışmanı, kullanıcıların ev ve işyerinde atıkları doğru şekilde sınıflandırmalarına yardımcı olur. Kullanıcıdan atık türünü girmesi istenir, Pay Zeka algoritması uygun geri dönüşüm yöntemini önerir.</p>
+</section>
+
+<section id="features">
+  <h2>Özellikler</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Interaktif Öneriler</h3>
+      <p>Atık türünü seç, sistem sana en uygun geri dönüşüm yöntemini söylesin.</p>
+    </div>
+    <div class="card">
+      <h3>SDG Uyumlu</h3>
+      <p>Sürdürülebilir Tüketim ve Üretim hedeflerini destekler, karbon ayak izini azaltır.</p>
+    </div>
+    <div class="card">
+      <h3>Pay Zeka Araçları</h3>
+      <p>Topluluk paylaşımları ve akıllı öneriler ile kullanıcılar bilgi alışverişinde bulunabilir.</p>
+    </div>
+  </div>
+</section>
+
+<section id="callToAction" style="text-align:center; margin-top:3rem;">
+  <button class="btn" onclick="alert('Yakında interaktif demo eklenecek!')">Hemen Deneyin</button>
+</section>
+
+<footer>
+  <p>&copy; 2025 Akıllı Geri Dönüşüm Danışmanı | Sürdürülebilir Gelecek</p>
+  <p>Email: info@akilligeridonusum.com</p>
+</footer>
+
+</body>
+</html>
+
+
